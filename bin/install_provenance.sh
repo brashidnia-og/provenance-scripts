@@ -15,3 +15,7 @@ sudo ${mount_disk_path}
 run_node_path="${script_dir}/2_install_provenance_lite.sh"
 echo "Running ${run_node_path}"
 sudo ${run_node_path}
+
+run_download_path="${script_dir}/3_download_snapshot.sh"
+echo "Running ${run_download_path}"
+sudo ${run_download_path}
