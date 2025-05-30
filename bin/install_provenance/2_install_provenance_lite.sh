@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ~/.bashrc
+
 output=$(echo $PIO_MAINNET_HOME)
 if [[ -n $output ]]
 then
