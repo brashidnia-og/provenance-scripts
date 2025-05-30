@@ -11,9 +11,9 @@ else
   exit 1
 fi
 
-mkdir -p $PIO_MAINNET_HOME
+sudo mkdir -p $PIO_MAINNET_HOME
 
-mount /dev/nvme1n1 $$PIO_MAINNET_HOME
+sudo mount /dev/nvme1n1 $$PIO_MAINNET_HOME
 
 df -H
 
