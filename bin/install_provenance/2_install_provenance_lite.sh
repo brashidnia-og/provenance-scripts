@@ -81,14 +81,10 @@ source ~/.bashrc
 echo 'PIO_MAINNET_HOME:'
 echo $PIO_MAINNET_HOME
 
-export PIO_MAINNET_HOME=/media/ubuntu/mainnet-0/provenance
-echo 'PIO_MAINNET_HOME:'
-echo $PIO_MAINNET_HOME
-
 # Install cosmovisor (prereq: go)
-sudo mkdir -p $PIO_MAINNET_HOME/cosmovisor/install
+mkdir -p $PIO_MAINNET_HOME/cosmovisor/install
 cd $PIO_MAINNET_HOME/cosmovisor/install
-git clone https://github.com/cosmos/cosmos-sdk.git
+sudo git clone https://github.com/cosmos/cosmos-sdk.git
 cd cosmos-sdk/tools/cosmovisor
 make
 
