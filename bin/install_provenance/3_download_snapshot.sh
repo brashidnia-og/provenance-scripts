@@ -30,7 +30,7 @@ echo $highstakes_snapshot_hour
 highstakes_snapshot_filename="data_$highstakes_snapshot_date-$highstakes_snapshot_hour.tar.gz"
 echo 'latest snapshot:'
 echo "https://tools.highstakes.ch/files/provenance/goleveldb/$highstakes_snapshot_filename"
-wget "https://tools.highstakes.ch/files/provenance/goleveldb/$highstakes_snapshot_filename"
+wget "https://tools.highstakes.ch/files/provenance/goleveldb/$highstakes_snapshot_filename" -O $PIO_MAINNET_HOME
 
 # Extract snapshot
-sudo tar -xzvf $highstakes_snapshot_filename -C $PIO_MAINNET_HOME
+sudo tar -xzvf $PIO_MAINNET_HOME/$highstakes_snapshot_filename -C $PIO_MAINNET_HOME
