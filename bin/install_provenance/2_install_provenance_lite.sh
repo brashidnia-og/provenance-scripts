@@ -82,11 +82,11 @@ echo 'PIO_MAINNET_HOME:'
 echo $PIO_MAINNET_HOME
 
 # Install cosmovisor (prereq: go)
-mkdir -p $PIO_MAINNET_HOME/cosmovisor/install
+sudo mkdir -p $PIO_MAINNET_HOME/cosmovisor/install
 cd $PIO_MAINNET_HOME/cosmovisor/install
 sudo git clone https://github.com/cosmos/cosmos-sdk.git
 cd cosmos-sdk/tools/cosmovisor
-make
+sudo make
 
 # Install provenance
 cd
@@ -105,5 +105,4 @@ cd
 yes | sudo apt install jq
 
 cp run_pio_mainnet_1.sh $PIO_MAINNET_HOME
-cd $PIO_PIO_MAINNET_HOME
 sudo chmod 777 $PIO_MAINNET_HOME/run_pio_mainnet_1.sh
