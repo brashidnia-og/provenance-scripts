@@ -1,5 +1,7 @@
 #!/bin/sh
 
+source ~/.bashrc
+
 current_dir=`dirname -- $0`
 echo "Running from ${current_dir}"
 

@@ -73,8 +73,8 @@ docker-compose --version
 
 # Define PIO MAINNET dir
 sudo mkdir /media/ubuntu/mainnet-0/provenance
-echo 'export PIO_MAINNET_HOME=/media/ubuntu/mainnet-0/provenance' >> /home/ubuntu/.bashrc
-source /home/ubuntu/.bashrc
+echo 'export PIO_MAINNET_HOME=/media/ubuntu/mainnet-0/provenance' >> ~/.bashrc
+source ~/.bashrc
 
 echo 'PIO_MAINNET_HOME:'
 echo $PIO_MAINNET_HOME
