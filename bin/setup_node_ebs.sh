@@ -1,6 +1,6 @@
 #!/bin/sh
 
-current_dir=`dirname $0`
+current_dir=`dirname -- $0`
 echo "Running from ${current_dir}"
 
 script_dir="${current_dir}/setup_node_ebs"

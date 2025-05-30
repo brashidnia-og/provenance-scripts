@@ -2,7 +2,7 @@
 
 export PIO_MAINNET_HOME=/media/ubuntu/mainnet-0/provenance
 
-current_dir=`dirname $0`
+current_dir=`dirname -- $0`
 echo "Running from ${current_dir}"
 
 script_dir="${current_dir}/mount_and_run"
