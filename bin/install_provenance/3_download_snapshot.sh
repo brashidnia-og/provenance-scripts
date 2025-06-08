@@ -14,23 +14,22 @@ fi
 echo 'PIO_MAINNET_HOME:'
 echo $PIO_MAINNET_HOME
 
-# Derive filename
-highstakes_snapshot_date=$(date -u +'%Y-%m-%d')
+current_dir=`dirname -- $0`
+echo "Running from ${current_dir}"
 
-echo 'DATE UTC:'
-echo $highstakes_snapshot_date
+script_dir="${current_dir}/download_snapshot"
+echo "Running scripts in ${script_dir}"
 
-current_utc_hour=$(date -u +%H)
-highstakes_snapshot_hour=$(printf "%02d" "$((current_utc_hour - (current_utc_hour % 3)))")
+sudo chmod 777 ${script_dir}/*.sh
 
-echo 'highstakes_snapshot_hour:'
-echo $highstakes_snapshot_hour
+download_highstakes_path="${script_dir}/1_download_snapshot_highstakes.sh"
+echo "Running ${download_highstakes_path}"
+source ${download_highstakes_path}
 
-# Download snapshot
-highstakes_snapshot_filename="data_$highstakes_snapshot_date-$highstakes_snapshot_hour.tar.gz"
-echo 'latest snapshot:'
-echo "https://tools.highstakes.ch/files/provenance/goleveldb/$highstakes_snapshot_filename"
-wget "https://tools.highstakes.ch/files/provenance/goleveldb/$highstakes_snapshot_filename" -O $PIO_MAINNET_HOME
+download_auto_stake_path="${script_dir}/2_download_snapshot_autostake.sh"
+echo "Running ${download_auto_stake_path}"
+source ${download_auto_stake_path}
 
-# Extract snapshot
-sudo tar -xzvf $PIO_MAINNET_HOME/$highstakes_snapshot_filename -C $PIO_MAINNET_HOME
+download_synergy_path="${script_dir}/3_download_snapshot_synergy.sh"
+echo "Running ${download_synergy_path}"
+source ${download_synergy_path}
